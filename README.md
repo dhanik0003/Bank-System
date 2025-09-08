@@ -70,7 +70,7 @@ git clone https://github.com/dhanik0003/Bank-System.git
 
 ```bash
 # Navigate into the project
-cd Bank-System
+cd Bank-System/Bank-System
 ```
 
 ```bash
