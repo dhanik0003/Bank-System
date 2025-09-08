@@ -1,5 +1,11 @@
 # 💳 Bank System (C++ + SQLite)
 
+![C++](https://img.shields.io/badge/language-C++-blue?style=for-the-badge)
+![SQLite](https://img.shields.io/badge/database-SQLite-green?style=for-the-badge)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=for-the-badge)
+![Release](https://img.shields.io/badge/release-v1.0.0-orange?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-lightblue?style=for-the-badge)
+
 A console-based banking system built in **C++** with **SQLite** database integration.  
 It simulates real-world banking operations for both users and admins with persistent data storage, modular code design, and an interactive terminal interface.
 
@@ -38,15 +44,20 @@ It simulates real-world banking operations for both users and admins with persis
 
 ```
 Bank-System/
-│── main.cpp               # Entry point
-│── account_manager.cpp     # Handles user & admin logic
-│── sqlite_helper.cpp       # SQLite operations
-│── console_utils.cpp       # Console utilities (cursor, colors, etc.)
-│── art.cpp                 # ASCII art, banners
-│── helper.cpp              # Misc helper functions
-│── bank_server.db          # SQLite database (auto-created)
-│── README.md               # Project documentation
-│── docs/images/            # Screenshots & banner images
+│── Bank-System/
+│   ├── main.cpp               # Entry point
+│   ├── account_manager.cpp    # Handles user & admin logic
+│   ├── sqlite_helper.cpp      # SQLite operations
+│   ├── console_utils.cpp      # Console utilities (cursor, colors, etc.)
+│   ├── art.cpp                # ASCII art, banners
+│   ├── helper.cpp             # Misc helper functions
+|   ├── bank_server.db         # SQLite database (auto-created)
+│   └── *.h files              # Header files
+│
+│── README.md                  # Project documentation
+│── .gitignore                 # Git ignore rules
+│── Screenshots/               # Screenshots & banner images
+
 ```
 ---
 
