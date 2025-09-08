@@ -75,7 +75,7 @@ cd Bank-System/Bank-System
 
 ```bash
 # Compile the program
-g++ main.cpp account_manager.cpp sqlite_helper.cpp console_utils.cpp art.cpp helper.cpp sqlite3.o -o bank_system
+g++ main.cpp interface.cpp account_manager.cpp sqlite_helper.cpp console_utils.cpp art.cpp helper.cpp sqlite3.o -o bank_system
 ```
 
 ```bash
