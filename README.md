@@ -153,7 +153,7 @@ Contributions are welcome! 🎉
 
 5. Submit a Pull Request.
 
-    Please follow [Conventional Commits]([https://example.com](https://www.conventionalcommits.org/en/v1.0.0/))
+    Please follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ---
 
