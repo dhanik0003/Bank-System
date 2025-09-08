@@ -1,0 +1,29 @@
+# ---- Build Artifacts ----
+*.o              # Object files
+*.out            # Output binaries (Linux)
+*.exe            # Executables (Windows)
+*.dll            # Dynamic libraries (Windows)
+*.so             # Shared objects (Linux)
+
+# ---- Databases ----
+*.db             # SQLite database files (local testing only)
+*.sqlite
+*.sqlite3
+
+# ---- Logs ----
+*.log            # Log files
+*.tmp            # Temporary files
+
+# ---- IDE / Editor ----
+.vscode/         # VS Code settings
+.idea/           # JetBrains IDE settings
+*.swp            # Vim swap files
+*.swo
+*.bak            # Backup files
+
+# ---- OS Specific ----
+.DS_Store        # macOS Finder metadata
+Thumbs.db        # Windows Explorer metadata
+
+# ---- Custom ----
+bank_system      # Compiled program name
