@@ -25,6 +25,8 @@ int main()
                 break;
             case 4:
                 thank_you_header(11);
+                setcolor(5);
+                cout<<"\nEnter any key to close....\n";
                 getch();
                 exit(0);
         }

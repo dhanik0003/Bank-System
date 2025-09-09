@@ -509,7 +509,7 @@ string getPIN_once()
     return p1;
 }
 
-double getdeposit()
+double getdeposit(string prompt)
 {
     string depositstr;
     double deposit = 0.0;
@@ -523,7 +523,7 @@ double getdeposit()
 
     do
     {
-        cout<<"Enter Initial Deposit Amount: $";
+        cout<<prompt;
         setcolor(8);
         getline(cin,depositstr);
         setcolor(10);
@@ -540,7 +540,7 @@ double getdeposit()
             clearLine(curY);
             clearLine(curY+1);
             setCursorPosition(0, curY);
-            cout << "Enter Initial Deposit Amount: $" << deposit << endl;
+            cout << prompt << deposit << endl;
         }
 
     } while (!isValidAmt(depositstr));

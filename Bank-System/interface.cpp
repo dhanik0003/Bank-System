@@ -84,7 +84,6 @@ void user_login()
     {
         if(check_useraccount_db(acc_number, password))
         {
-            getch();
             int choice;
             do {
                 system("cls");
@@ -95,6 +94,10 @@ void user_login()
                 cout<<"\n1. View Balance\n2. Deposit\n3. Withdraw\n4. Change PIN\n5. Change name\n6. Logout\n"
                     <<"\nEnter your choice[1-6]: ";
                 choice = getValidatedChoice(1,6);
+                system("cls");
+                user_login_header();
+                cout<<endl;
+                setcolor(10);
                 cout<<retrieve_user_db(acc_number, choice);
 
                 if(choice != 6) {
@@ -128,7 +131,6 @@ void admin_login()
     {
         if(check_adminaccount_db(admin_username, admin_password))
         {
-            getch();
             int choice;
             do {
                 system("cls");
@@ -139,6 +141,10 @@ void admin_login()
                 cout<<"\n1. View All Accounts\n2. Delete Account\n3. Change Account Details\n4. Clear Database\n5. Logout\n"
                     <<"\nEnter your choice[1-5]: ";
                 choice = getValidatedChoice(1,5);
+                system("cls");
+                admin_login_header();
+                cout<<endl;
+                setcolor(10);
                 cout<<retrieve_admin_db(choice);
 
                 if(choice != 5) {

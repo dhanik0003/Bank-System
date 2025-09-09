@@ -11,7 +11,6 @@ sqlite3* openDatabase(const string& dbName) {
         cerr << "Error opening DB: " << sqlite3_errmsg(db) << endl;
         return nullptr;
     }
-    cout << "Database opened successfully!" << endl;
     return db;
 }
 
@@ -30,11 +29,10 @@ bool createTable(sqlite3* db) {
 
     char* errMsg = nullptr;
     if (sqlite3_exec(db, sql, nullptr, nullptr, &errMsg) != SQLITE_OK) {
-        cerr << "Error creating table: " << errMsg << endl;
+        cerr << "Error creating account: " << errMsg << endl;
         sqlite3_free(errMsg);
         return false;  // return false on failure
     } 
-    cout << "Table created (or already exists)." << endl;
     return true;  // success
 }
 
@@ -248,7 +246,6 @@ bool updateField(sqlite3* db, long long account_number, const string& field, con
     }
 
     sqlite3_finalize(stmt);
-    cout << "User updated successfully!" << endl;
     return true;
 }
 

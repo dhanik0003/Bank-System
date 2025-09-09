@@ -80,7 +80,7 @@ string retrieve_user_db(std::string accnumber, int choice)
     }
     case 2: {
         double balance = stod(getUserField(db, acc_number, "BALANCE"));
-        double amount = getdeposit();
+        double amount = getdeposit("Enter amount to deposit: $");
         balance += amount;
         updateField(db, acc_number, "BALANCE", to_string(balance));
         sqlite3_close(db);
@@ -89,8 +89,7 @@ string retrieve_user_db(std::string accnumber, int choice)
     case 3: {
         double balance = stod(getUserField(db, acc_number, "BALANCE"));
         double amount;
-        cout << "Enter amount to withdraw: ";
-        cin >> amount;
+        amount = getdeposit("Enter amount to withdraw: $");
         if (amount > balance) {
             sqlite3_close(db);
             return "Insufficient Funds";
@@ -195,9 +194,6 @@ std::string retrieve_admin_db(int choice)
                 break;
             }
 
-
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clear newline
-
         int choice;
         std::cout << "Select field to update:\n";
         std::cout << "1. FIRST_NAME\n";
@@ -209,50 +205,49 @@ std::string retrieve_admin_db(int choice)
         std::cout << "7. BALANCE\n";
         std::cout << "8. PIN\n";
         std::cout << "Enter choice: ";
-        std::cin >> choice;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clear newline
+        choice = getValidatedChoice(1,8);
 
         std::string field, value;
 
         
         switch(choice) {
             case 1:
-                std::cout << "Enter new FIRST_NAME: ";
+                
                 field = "FIRST_NAME";
                 value = getfname();
                 break;
             case 2:
-            std::cout << "Enter new LAST_NAME: ";
+            
             field = "LAST_NAME";
             value = getlname();
             break;
         case 3:
-            std::cout << "Enter new DOB: ";
+            
             field = "DOB";
             value = getDOB();
             break;
         case 4:
-            std::cout << "Enter new GENDER: ";
+            
             field = "GENDER";
             value = getGender();
             break;
         case 5:
-            std::cout << "Enter new ADDRESS: ";
+            
             field = "ADDRESS";
             value = getAddress();
             break;
         case 6:
-            std::cout << "Enter new PHONE: ";
+            
             field = "PHONE";
             value = getPhone();
             break;
         case 7:
-            std::cout << "Enter new BALANCE: ";
+            
             field = "BALANCE";
-            value = to_string(getdeposit());
+            value = to_string(getdeposit("Enter new BALANCE(Number only): $"));
             break;
         case 8:
-            std::cout << "Enter new PIN: ";
+            
             field = "PIN";
             value = getPIN_once();
             break;
