@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <random>
+#include <conio.h>
 #include <chrono>
 #include <algorithm>
 #include <cctype>
@@ -406,6 +407,29 @@ string getPhone()
     return ph;
 }
 
+string masking_input(const string& prompt = "Enter password: ") {
+    string password;  // local variable to store input
+    char ch;
+
+    cout << prompt;
+    setcolor(8);
+    while ((ch = _getch()) != 13) { // 13 = Enter key
+        if (ch == 8) { // Backspace
+            if (!password.empty()) {
+                password.pop_back();
+                setcolor(10);
+                cout << "\b \b"; // erase last '*'
+            }
+        } else {
+            password.push_back(ch);
+            setcolor(10);
+            cout << '*';
+        }
+    }
+    cout << endl;
+    return password;
+}
+
 string getPin()
 {
     string pin, p1, p2;
@@ -420,15 +444,10 @@ string getPin()
     do
     {
        
-        cout << "Enter Security PIN: ";
-        setcolor(8);
-        getline(cin, p1);
-        setcolor(10);
+        p1 = masking_input("Enter Security PIN: ");
+        
 
-        cout << "Re-enter Security PIN: ";
-        setcolor(8);
-        getline(cin, p2);
-        setcolor(10);        
+        p2 = masking_input("Re-enter Security PIN: ");       
 
         if (!isValidPIN(p1)) {
             clearLine(curY);
@@ -474,10 +493,7 @@ string getPIN_once()
     do
     {
        
-        cout << "Enter Security PIN: ";
-        setcolor(8);
-        getline(cin, p1);
-        setcolor(10);
+        p1 = masking_input("Enter Security PIN: ");
 
         if (!isValidPIN(p1)) {
             clearLine(curY);
@@ -550,10 +566,7 @@ bool user_initial_login(string& acc_number, string& password)
         setcolor(8);
         getline(cin,acc_number);
         setcolor(10);
-        cout<<"Security PIN: ";
-        setcolor(8);
-        getline(cin,password);
-        setcolor(10);
+        password = masking_input("Security PIN: ");
 
         if(!isValidAccountNumber(acc_number) || !isValidPIN(password)){
             clearLine(curY);
@@ -610,10 +623,7 @@ bool admin_initial_login(string& admin_username,string& admin_password)
         setcolor(8);
         getline(cin,admin_username);
         setcolor(10);
-        cout<<"Password: ";
-        setcolor(8);
-        getline(cin,admin_password);
-        setcolor(10);
+        admin_password = masking_input("Password: ");
 
         if(!isValidAdminCredential(admin_username, admin_password)){
             clearLine(curY);
