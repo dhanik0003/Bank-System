@@ -80,7 +80,7 @@ g++ main.cpp interface.cpp account_manager.cpp sqlite_helper.cpp console_utils.c
 
 ```bash
 # Run the program
-./bank_system
+./bank_system or bank_system.exe
 ```
 ---
 
@@ -94,7 +94,7 @@ Update your PIN or personal information.
 Logout safely.
 
 Admin Journey
-Login using your admin username and PIN.
+Login using your admin username(admin1) and PIN(1234).
 View all user accounts.
 Update or delete user accounts.
 Clear the database if required.
