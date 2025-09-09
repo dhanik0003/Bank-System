@@ -57,9 +57,13 @@ void create_account()
 
     if(createAccount_db(acc))
     {
-        cout<<"Account Created Successfully";
+        system("cls");
+        create_account_header();
+        cout<<endl;
+        setcolor(10);
+        cout<<"Account Created Successfully!\n";
         cout<<"\nAccount Number: "<<acc.accountNumber<<endl;
-        cout<<"Please save your Account Number and Security PIN for future logins."<<endl;
+        cout<<"\nPlease save your Account Number and Security PIN for future logins."<<endl;
     }
     else
     {
